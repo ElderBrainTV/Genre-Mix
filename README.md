@@ -36,4 +36,4 @@ This program is a simple web application that helps you generate random combinat
 - This program is a simple example and can be further customized and extended with additional features.
 
 ---
-[MIT License](https://opensource.org/licenses/MIT)
+[MIT License](https://github.com/ElderBrainTV/Genre-Mix?tab=MIT-1-ov-file#)
