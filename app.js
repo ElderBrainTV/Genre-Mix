@@ -49,7 +49,7 @@ const genres = [
     { name: 'Slice of Life', description: 'Depicts everyday experiences and relatable situations.', enabled: true },
     { name: 'Soft Science Fiction', description: 'Focuses on characters and emotions, with less emphasis on hard scientific accuracy.', enabled: true  },
     { name: 'Solarpunk', description: 'Utopian visions of a sustainable future, emphasizing renewable energy, green technology, and community.', enabled: true },
-    { name: 'Southern Gothic', description: 'Southern Gothic: Dark and atmospheric stories set in the American South, often with eerie or grotesque elements.', enabled: true },
+    { name: 'Southern Gothic', description: 'Dark and atmospheric stories set in the American South, often with eerie or grotesque elements.', enabled: true },
     { name: 'Space Opera', description: 'Grand space adventures, interstellar wars, and epic cosmic events.', enabled: true  },
     { name: 'Space Western', description: 'Cowboys in space, frontier justice, and intergalactic adventures.', enabled: true  },
     { name: 'Splatterpunk', description: 'Extreme horror, gore, and visceral violence.', enabled: true  },
