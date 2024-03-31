@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Genre Randomizer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Genre Randomizer</h1>
+  <div>
+    <label for="numGenres">Number of Genres:</label>
+    <input type="number" id="numGenres" min="1" value="1">
+    <button id="generateButton">Generate</button>
+  </div>
+  <div id="genreContainer"></div>
+  <div>
+    <h3>Add Custom Genre</h3>
+    <form id="addGenreForm">
+      <input type="text" id="genreName" placeholder="Genre Name" required>
+      <textarea id="genreDescription" placeholder="Genre Description (optional)"></textarea>
+      <button type="submit">Add Genre</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
