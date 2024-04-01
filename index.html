@@ -6,29 +6,43 @@
   <title>Genre Randomizer</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<div class="container">
 <body>
-  <h1>Genre Randomizer</h1>
-  <div>
-    <label for="numGenres">Number of Genres:</label>
-    <input type="number" id="numGenres" min="1" value="1">
-    <button id="generateButton">Generate</button>
-  </div>
-  <div id="genreContainer"></div>
-  <div>
-    <h3>Add Custom Genre</h3>
-    <form id="addGenreForm">
-      <input type="text" id="genreName" placeholder="Genre Name" required>
-      <textarea id="genreDescription" placeholder="Genre Description (optional)"></textarea>
-      <button type="submit">Add Genre</button>
-    </form>
-  </div>
-  <button id="toggleGallery">Show/Hide Gallery</button>
-  <div id="genreGalleryContainer">
-    <div id="genreGallery"></div>
-    <button id="toggleAllGenres">Toggle All Genres</button>
+  <div class="container">
+    <h1>Genre Randomizer</h1>
+    <div class="slot-machine">
+      <div class="slot">
+        <div class="slot-reel">
+          <div class="slot-reel-needle"></div>
+        </div>
+      </div>
+      <div class="slot">
+        <div class="slot-reel">
+          <div class="slot-reel-needle"></div>
+        </div>
+      </div>
+      <div class="slot">
+        <div class="slot-reel">
+          <div class="slot-reel-needle"></div>
+        </div>
+      </div>
+      <button id="addSlotButton">+</button>
+      <button id="subtractSlotButton">-</button>
+      <button id="spinButton">SPIN!</button>
+    </div>
+    <div>
+      <h3>Add Custom Genre</h3>
+      <form id="addGenreForm">
+        <input type="text" id="genreName" placeholder="Genre Name" required>
+        <textarea id="genreDescription" placeholder="Genre Description (optional)"></textarea>
+        <button type="submit">Add Genre</button>
+      </form>
+    </div>
+    <button id="toggleGallery">Show/Hide Gallery</button>
+    <div id="genreGalleryContainer">
+      <div id="genreGallery"></div>
+      <button id="toggleAllGenres">Toggle All Genres</button>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
-</div>
 </html>
