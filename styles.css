@@ -91,7 +91,7 @@ h3 {
 
 button,
 input[type="submit"] {
-  padding: 10px 20px;
+  padding: 0.5rem 1rem;
   font-size: 16px;
   background-color: var(--primary-color);
   color: white;
@@ -102,6 +102,8 @@ input[type="submit"] {
   box-shadow: 0 2px 4px var(--shadow-color);
   position: relative;
   overflow: hidden;
+  margin: 0.5rem;
+  width: auto;
 }
 
 button:hover,
@@ -203,29 +205,87 @@ textarea {
   background: var(--background-color);
   border: 2px solid var(--primary-color);
 }
+@media (max-width: 768px) {
+  /* Adjustments for tablets */
+  #genreContainer,
+  #genreGallery {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 
+  .genreCard {
+    padding: 10px; /* Less padding on smaller screens */
+  }
+
+  .slot {
+    width: 45%; /* Each slot takes up almost half the screen width */
+    margin: 5vh 2.5%; /* Smaller margin */
+    height: 20vh; /* Larger height for touch targets */
+    font-size: 5vh; /* Larger font size for readability */
+  }
+
+  button,
+  input[type="submit"] {
+    padding: 5% 10%; /* Responsive padding */
+    font-size: 4vh; /* Larger font size */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjustments for mobile phones */
+  #genreContainer,
+  #genreGallery {
+    grid-template-columns: 1fr; /* Full width columns */
+  }
+
+  .genreCard {
+    padding: 5px; /* Even less padding on small screens */
+  }
+
+  .slot {
+    width: 90%; /* Each slot takes up most of the screen width */
+    margin: 5vh 5%; /* Adjust margin */
+    height: 25vh; /* Taller slots for scrolling */
+    font-size: 6vh; /* Even larger font size for readability */
+  }
+
+  button,
+  input[type="submit"] {
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 5vh; /* Adjust button font size for readability */
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 6vh; /* Larger font size for headings */
+  }
+}
 /* Slot machine styles */
 .slot-machine {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align slots to the start */
+  gap: 1rem; /* Consistent gap between slots and buttons */
+  margin: 1rem auto; /* Center align the slot machine with margin */
+  max-width: 1200px; /* Max width to prevent stretching on very large screens */
+  margin-bottom: 1rem;
 }
 
 .slot {
-  width: 200px;
-  height: 100px;
+  flex: 0 0 auto; /* Flexibility in slot sizing */
+  max-width: calc(20% - 2rem); /* Account for gap in max width */
+  height: 10vh;
   background-color: var(--card-background-color);
   border: 2px solid var(--primary-color);
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 10px;
   box-shadow: 0 2px 4px var(--shadow-color);
   transition: background-color 0.3s, color 0.3s;
   overflow: hidden;
   position: relative;
+  margin: 0.5rem;
 }
 
 .slot-reel {
@@ -253,37 +313,72 @@ textarea {
   color: var(--primary-color);
 }
 
-
-
-
 .slot:hover {
   animation: pulse 0.5s infinite;
 }
 
-
-/* Responsive styles */
+/* Responsive styles for tablet */
 @media (max-width: 768px) {
-  #genreContainer,
-  #genreGallery {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
   .slot {
-    width: 80px;
-    height: 80px;
-    font-size: 18px;
+    flex-basis: 45%; /* Allow 2 slots per row on tablets */
+    max-width: calc(50% - 10px); /* Half of container width minus gap */
+    height: 15vh; /* Increase height for larger touch targets */
+    font-size: 18px; /* Scaled up font size */
   }
 }
 
+/* Responsive styles for mobile */
 @media (max-width: 480px) {
-  #genreContainer,
-  #genreGallery {
-    grid-template-columns: 1fr;
+  .slot {
+    flex-basis: 100%; /* Single slot per row on mobile */
+    max-width: 100%; /* Full width of the container */
+    height: 20vh; /* Further increased height for touch targets */
+    font-size: 14px; /* Adjusted font size for mobile */
+  }
+}
+/* Responsive adjustments for very large screens */
+@media (min-width: 1200px) {
+  .slot-machine {
+    justify-content: center; /* Center slots when there's enough space */
+  }
+}
+
+/* Ensure the slots and buttons remain in a clean row on desktop */
+@media (min-width: 1200px) {
+  .slot {
+    width: 150px; /* Fixed width for each slot */
+    height: 150px; /* Fixed height to ensure the boxes remain square */
+  }
+}
+
+/* Slot machine styles for desktop */
+@media (min-width: 992px) {
+  .slot-machine {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribute slots evenly */
+    gap: 1rem; /* Space between slots */
+    padding: 1rem; /* Padding around the slot machine */
   }
 
   .slot {
-    width: 60px;
-    height: 60px;
-    font-size: 14px;
+    flex: 0 0 150px; /* Fixed width and no flexibility */
+    height: 150px; /* Fixed height to match width */
+    margin: 0.5rem; /* Consistent margin */
+    /* ... remaining styles ... */
+  }
+
+  /* Adjust button size and spacing */
+  button,
+  input[type="submit"] {
+    min-width: 100px; /* Minimum width for buttons */
+    padding: 0.5rem 1rem; /* Padding inside buttons */
+    /* ... remaining styles ... */
+  }
+}
+
+@media (max-width: 768px) {
+  .slot {
+    width: calc(50% - 1rem); /* 2 slots per row */
   }
 }
